@@ -20,7 +20,7 @@ let ctx = canvas.getContext("2d"),
 const setCanvasBg = () => {
   ctx.fillStyle = "#fff";
   ctx.fillRect(0, 0, canvas.width, canvas.height);
-  // ctx.fillStyle = selectedColor;
+  ctx.fillStyle = selectedColor;
 };
 
 window.addEventListener("load", () => {
@@ -173,5 +173,6 @@ saveCanvasBtn.addEventListener("click", () => {
   const link = document.createElement("a");
   link.download = `My paint_${Date.now()}.jpg`;
   link.href = canvas.toDataURL();
+  setCanvasBg();
   link.click();
 });
